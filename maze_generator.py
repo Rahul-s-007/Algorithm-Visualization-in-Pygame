@@ -4,6 +4,13 @@ import numpy as np
 import time
 import json
 
+"""
+optimise Json:
+only store coordinates of cells which are diff colour 
+then store the colour of remaining cells as a single colour
+this way we save on space complexity as we are not stroring same vaules for (m*n)-2 cells
+"""
+
 # Set up the grid parameters
 # grid_width = 20  # Number of cells in the grid horizontally
 # grid_height = 20  # Number of cells in the grid vertically
@@ -188,7 +195,7 @@ def save_maze():
     with open('mazes.json', 'w') as file:
         json.dump(mazes, file, indent=4)
 
-save_maze()
+# save_maze()
 
 # Keep the window open until manually closed
 while True:
